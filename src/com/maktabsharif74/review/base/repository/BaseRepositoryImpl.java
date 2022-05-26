@@ -74,5 +74,10 @@ public abstract class BaseRepositoryImpl<T extends BaseDomain<ID>, ID>
 
     public abstract String getDomainTableName();
 
-    public abstract T convertResultSetToDomain(ResultSet resultSet);
+    public abstract T convertResultSetToDomain(ResultSet resultSet) throws SQLException;
+
+    protected String getInsertQuery(String columns, String values) {
+        return "INSERT INTO " + getDomainTableName() + "(" + columns + ") " +
+                "VALUES (" + values + ")";
+    }
 }

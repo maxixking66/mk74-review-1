@@ -68,4 +68,16 @@ public class User extends BaseDomain<Long> {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + getId() + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

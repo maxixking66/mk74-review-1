@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BaseRepository</*domain*/T extends BaseDomain<ID>,/*id domain*/ ID> {
 
-    T save(T t);
+    T save(T t) throws SQLException;
 
     T update(T t);
 
