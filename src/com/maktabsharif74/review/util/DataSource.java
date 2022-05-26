@@ -11,7 +11,9 @@ public class DataSource {
     private final String url = "jdbc:mysql://localhost:3306";
     private final Connection connection;
 
-    public DataSource() throws SQLException {
+    public DataSource() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
         this.connection =
                 DriverManager.getConnection(
                         url, username, password
